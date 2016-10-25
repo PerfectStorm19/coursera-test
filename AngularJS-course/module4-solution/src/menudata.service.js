@@ -20,34 +20,18 @@ service.getAllCategories = function () {
 
 
   service.getItemsForCategory = function (categoryShortName) {
-    var response = $http({
+    return $http({
       method: "GET",
-      url: ("https://davids-restaurant.herokuapp.com/menu_items.json?category="),
+      url: ("https://davids-restaurant.herokuapp.com/menu_items.json"),
       params: {
         category: categoryShortName
       }
-    });
-
-    return response;
-  };
+    })
+.then(function(response){
+    return response.data;
+  });
+  }
 
 }
 
 })();
-// service.getItemsForCategory = function (categoryShortName) {
-//     var deferred = $q.defer();
-//     var promise = $http({
-//       method: "GET",
-//       url: (urlBase + 'menu_items.json'),
-//       params: {
-//         category: categoryShortName
-//       }
-//     });
-//     promise.then(function (response){
-//       deferred.resolve({
-//         menuItems: response.data.menu_items,
-//         name: response.data.category.name
-//       });
-//     });
-//     return deferred.promise;
-//   };

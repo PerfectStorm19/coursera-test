@@ -1,21 +1,15 @@
 (function () {
 'use strict';
 
-angular.module('data')
+angular.module('MenuApp')
 .controller('ItemsController', ItemsController);
 
 
-ItemsController.$inject = ['MenuDataService','items'];
-function ItemsController(MenuDataService, items) {
+ItemsController.$inject = ['MenuDataService', 'categorydata'];
+function ItemsController(MenuDataService, categorydata) {
   var itemsList = this;
 
-
-
-  var promise = MenuDataService.getItemsForCategory(categoryShortName);
-
-  promise.then(function (response) {
-    itemsList.items = response.data.menu_items;
-  })
+    itemsList.items = categorydata.menu_items;
 }
 
 })();
