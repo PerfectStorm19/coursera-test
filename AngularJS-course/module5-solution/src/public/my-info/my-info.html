@@ -1,8 +1,8 @@
 <div class="container" ng-controller="MyInfoController as myInfoCtrl">
     <div ng-if="!myInfoCtrl.user">
-      You have to sign up first
+      Not Signed Up Yet.
         <a ui-sref="public.signup">
-          <span class="glyphicon glyphicon-certificate">Sign Up </span><br class="hidden-xs"> </a>
+          <span class="glyphicon glyphicon-certificate">Sign up Now! </span><br class="hidden-xs"> </a>
     </div>
     <div id="info" ng-if="myInfoCtrl.user">
         Your registered information
